@@ -1,0 +1,8 @@
+C:\Users\ImieNazwisko\Desktop\PossibleTask\Possible\API\PossibleAPI\TwitterManager\bin\Debug\netcoreapp2.1\TwitterManager.deps.json
+C:\Users\ImieNazwisko\Desktop\PossibleTask\Possible\API\PossibleAPI\TwitterManager\bin\Debug\netcoreapp2.1\TwitterManager.dll
+C:\Users\ImieNazwisko\Desktop\PossibleTask\Possible\API\PossibleAPI\TwitterManager\obj\Debug\netcoreapp2.1\TwitterManager.csproj.CoreCompileInputs.cache
+C:\Users\ImieNazwisko\Desktop\PossibleTask\Possible\API\PossibleAPI\TwitterManager\obj\Debug\netcoreapp2.1\TwitterManager.AssemblyInfoInputs.cache
+C:\Users\ImieNazwisko\Desktop\PossibleTask\Possible\API\PossibleAPI\TwitterManager\obj\Debug\netcoreapp2.1\TwitterManager.AssemblyInfo.cs
+C:\Users\ImieNazwisko\Desktop\PossibleTask\Possible\API\PossibleAPI\TwitterManager\bin\Debug\netcoreapp2.1\TwitterManager.pdb
+C:\Users\ImieNazwisko\Desktop\PossibleTask\Possible\API\PossibleAPI\TwitterManager\obj\Debug\netcoreapp2.1\TwitterManager.dll
+C:\Users\ImieNazwisko\Desktop\PossibleTask\Possible\API\PossibleAPI\TwitterManager\obj\Debug\netcoreapp2.1\TwitterManager.pdb

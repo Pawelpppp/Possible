@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PossibleAPI", "PossibleAPI\PossibleAPI.csproj", "{FC64412A-AAB2-49E4-B691-526A0D78E94B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterManager", "TwitterManager\TwitterManager.csproj", "{48C731DE-88F6-430E-ADE6-6BADBA4C9453}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{714B74DB-42C6-4022-9550-2ED3227A765D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC64412A-AAB2-49E4-B691-526A0D78E94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC64412A-AAB2-49E4-B691-526A0D78E94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC64412A-AAB2-49E4-B691-526A0D78E94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC64412A-AAB2-49E4-B691-526A0D78E94B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48C731DE-88F6-430E-ADE6-6BADBA4C9453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48C731DE-88F6-430E-ADE6-6BADBA4C9453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48C731DE-88F6-430E-ADE6-6BADBA4C9453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48C731DE-88F6-430E-ADE6-6BADBA4C9453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714B74DB-42C6-4022-9550-2ED3227A765D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714B74DB-42C6-4022-9550-2ED3227A765D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714B74DB-42C6-4022-9550-2ED3227A765D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714B74DB-42C6-4022-9550-2ED3227A765D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E9D1398-53A9-479F-98BC-7C9C362D10EA}
+	EndGlobalSection
+EndGlobal
