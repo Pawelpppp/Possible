@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Services;
-using TwitterManager;
+using System.Collections.Generic;
 
 namespace PossibleAPI.Controllers
 {
@@ -25,8 +21,8 @@ namespace PossibleAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            _userLastTweetService.UserLastTweet("ppp");
-            _searchService.Search("Polska");
+            var ssss=_userLastTweetService.UserLastTweet("ppp");
+            var res = _searchService.Search("USA");
             return new string[] { "value1", "value2" };
         }
 

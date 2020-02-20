@@ -1,4 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
+using Services.Dto;
+using System;
+using System.Collections.Generic;
 using TwitterManager;
 
 namespace Services
@@ -12,11 +15,28 @@ namespace Services
             _twitterRequest = new TwitterRequest();
         }
 
-        public void UserLastTweet(string name)
+        public List<TweetDto> UserLastTweet(string name)
         {
             var SearchText = _twitterRequest.UserLastTweet();
-            //dynamic data = JObject.Parse(SearchText);
+            dynamic data = JArray.Parse(SearchText);
 
+            return GetRequiredData(data);
+        }
+
+        private List<TweetDto> GetRequiredData(dynamic statuses)//fix dynamic
+        {
+            var result = new List<TweetDto>();
+            foreach (var tweet in statuses)
+            {
+                if (!ReferenceEquals(null, tweet))
+                {
+                    var date = Convert.ToString(tweet["created_at"]);
+                    var text = Convert.ToString(tweet["text"]);
+                    var name = Convert.ToString(tweet?.user["name"]);
+                    result.Add(new TweetDto(date, text, name));
+                }
+            }
+            return result;
         }
     }
 }
