@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Services.Dto
+﻿namespace Services.Dto
 {
     public class TweetDto
     {
-        private dynamic date;
-        private dynamic text;
-        private dynamic name;
+        public string Date { get; set; }
+        public string Text { get; set; }
+        public string Name { get; set; }
 
-        public TweetDto(dynamic date, dynamic text, dynamic name)
+        public TweetDto(string date, string text, string name)
         {
-            this.date = date;
-            this.text = text;
-            this.name = name;
+            Date = date;
+            Text = text;
+            Name = name;
         }
     }
 }

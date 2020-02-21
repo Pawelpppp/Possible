@@ -18,9 +18,12 @@ namespace Services
         public List<TweetDto> UserLastTweet(string name)
         {
             var SearchText = _twitterRequest.UserLastTweet();
-            dynamic data = JArray.Parse(SearchText);
-
-            return GetRequiredData(data);
+            if (!string.IsNullOrEmpty(SearchText))
+            {
+                dynamic data = JArray.Parse(SearchText);
+                return GetRequiredData(data);
+            }
+            return null;
         }
 
         private List<TweetDto> GetRequiredData(dynamic statuses)//fix dynamic

@@ -15,12 +15,18 @@ namespace Services
             _twitterRequest = new TwitterRequest();
         }
 
-        public List<TweetDto> Search(string search)
+        public List<TweetDto> Search(string search, int page)
         {
-            var SearchText = _twitterRequest.Search2(search);
-            dynamic data = JObject.Parse(SearchText);
+            var searchText = _twitterRequest.Search(search);
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                
+                dynamic data = JObject.Parse(searchText);
 
-            return GetRequiredData(data.statuses);
+                return GetRequiredData(data.statuses);
+            }
+            return null;
+            
         }
 
         private List<TweetDto> GetRequiredData(dynamic statuses)//fix dynamic
@@ -30,9 +36,9 @@ namespace Services
             {
                 if (!ReferenceEquals(null, tweet))
                 {
-                    var date = Convert.ToString(tweet["created_at"]);
-                    var text = Convert.ToString(tweet["text"]);
-                    var name = Convert.ToString(tweet?.user["name"]);
+                    string date = Convert.ToString(tweet["created_at"]);
+                    string text = Convert.ToString(tweet["text"]);
+                    string name = Convert.ToString(tweet?.user["name"]);
                     result.Add(new TweetDto(date, text, name));
                 }
             }
