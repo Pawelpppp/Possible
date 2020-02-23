@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PossibleAPI.Models;
 using Services;
-using Services.Dto;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace PossibleAPI.Controllers
 {
@@ -39,14 +37,14 @@ namespace PossibleAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public ActionResult<IEnumerable<TweetDto>> Post([FromBody] SearchModel searchModel)
+        public ActionResult<IEnumerable<TweetModel>> Post([FromBody] SearchModel searchModel)
         {
             if (searchModel != null)
             {
                 var res = _searchService.Search(searchModel.SearchText, searchModel.Page);
-                return res;
+                return res.ConvertAll(dto => new TweetModel(dto));
             }
-            return new JsonResult("Dupa");
+            return BadRequest("SearchModel is not valid");
         }
 
         // PUT api/values/5
