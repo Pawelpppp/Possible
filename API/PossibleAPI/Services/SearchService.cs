@@ -7,13 +7,13 @@ using TwitterManager;
 
 namespace Services
 {
-    public class SearchService
+    public class SearchService : ISearchService
     {
         private static Dictionary<string, SearchResultPage> PaginationDictionary = new Dictionary<string, SearchResultPage>();
-        private TwitterRequest _twitterRequest;
-        public SearchService()
+        private ITwitterRequest _twitterRequest;
+        public SearchService(ITwitterRequest twitterRequest)
         {
-            _twitterRequest = new TwitterRequest();
+            _twitterRequest = twitterRequest;
         }
         
         public List<TweetDto> Search(string search, int page)

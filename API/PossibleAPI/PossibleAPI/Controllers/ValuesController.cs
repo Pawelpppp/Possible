@@ -10,29 +10,22 @@ namespace PossibleAPI.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly SearchService _searchService;
-        private readonly UserLastTweetService _userLastTweetService;
+        private readonly ISearchService _searchService;
+        private readonly IUserLastTweetService _userLastTweetService;
 
-        public ValuesController()
+        public ValuesController(ISearchService searchService, IUserLastTweetService userLastTweetService)
         {
-            _searchService = new SearchService(); //ToDo: DI
-            _userLastTweetService = new UserLastTweetService();
+            _searchService = searchService; //ToDo: DI
+            _userLastTweetService = userLastTweetService;
         }
 
         // GET api/values
         [HttpGet]
         [Produces("application/json")]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<TweetModel>> Get()
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        [Produces("application/json")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
+            var res = _userLastTweetService.UserLastTweet("");
+            return res.ConvertAll(dto => new TweetModel(dto));
         }
 
         // POST api/values
@@ -45,19 +38,6 @@ namespace PossibleAPI.Controllers
                 return res.ConvertAll(dto => new TweetModel(dto));
             }
             return BadRequest("SearchModel is not valid");
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        [Produces("application/json")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

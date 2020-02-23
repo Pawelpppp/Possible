@@ -6,7 +6,7 @@ using System.Web;
 
 namespace TwitterManager
 {
-    public class TwitterRequest
+    public class TwitterRequest : ITwitterRequest
     {
         public string UserLastTweet()
         {

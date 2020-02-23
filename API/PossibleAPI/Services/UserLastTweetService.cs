@@ -6,13 +6,13 @@ using TwitterManager;
 
 namespace Services
 {
-    public class UserLastTweetService
+    public class UserLastTweetService : IUserLastTweetService
     {
-        private TwitterRequest _twitterRequest;
+        private ITwitterRequest _twitterRequest;
 
-        public UserLastTweetService()
+        public UserLastTweetService(ITwitterRequest twitterRequest)
         {
-            _twitterRequest = new TwitterRequest();
+            _twitterRequest = twitterRequest;
         }
 
         public List<TweetDto> UserLastTweet(string name)
