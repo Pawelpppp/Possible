@@ -98,5 +98,42 @@ window.onload = () => {
 		const resultsWrapper = document.querySelector('.results-container');
 		resultsWrapper.style.display = 'block';
 	}
+
+	const getPossibleLastTweet = async (data) => {
+		const options = {
+		  method: 'GET',
+		  headers: {
+			'Accept': 'application/json',
+			"Content-Type": 'application/json; charset=utf-8'
+		},
+
+		  url: 'http://localhost:59930/api/values'
+		};
+		const response = await axios(options);
+		createPossibleLastTweets(response.data);
+	}
+
+	const createPossibleLastTweets = results => {
+		const wrapper = document.querySelector('#sidebar-twitter-feed');
+		wrapper.innerText = '';
+	
+		results.forEach(result => { 	
+			const tweet = document.createElement('div');
+			tweet.className = 'tweet';
+	
+			const p = document.createElement('p');
+			p.innerText = result.text.slice(0,140);
+	
+			const tweetDatetime = document.createElement('p');
+			tweetDatetime.className = 'tweet-datetime';
+			tweetDatetime.innerText = `Posted on ${result.date.replace(' +0000','').substring(3)}`;
+	
+			tweet.appendChild(p);
+			tweet.appendChild(tweetDatetime);
+	
+			wrapper.appendChild(tweet);
+		});
+	}	
+	getPossibleLastTweet();
 }
 
