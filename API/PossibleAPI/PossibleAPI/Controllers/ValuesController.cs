@@ -15,7 +15,7 @@ namespace PossibleAPI.Controllers
 
         public ValuesController(ISearchService searchService, IUserLastTweetService userLastTweetService)
         {
-            _searchService = searchService; //ToDo: DI
+            _searchService = searchService;
             _userLastTweetService = userLastTweetService;
         }
 
